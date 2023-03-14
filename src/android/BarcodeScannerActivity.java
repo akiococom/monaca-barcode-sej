@@ -172,18 +172,22 @@ public class BarcodeScannerActivity extends AppCompatActivity {
             case Barcode.FORMAT_QR_CODE:
                 formatStr = "QR_CODE";
                 break;
+            /*
             case Barcode.FORMAT_EAN_8:
                 formatStr = "EAN_8";
                 break;
             case Barcode.FORMAT_EAN_13:
                 formatStr = "EAN_13";
                 break;
+            */
             case Barcode.FORMAT_CODE_39:
                 formatStr = "CODE_39";
                 break;
+            /*
             case Barcode.FORMAT_ITF:
                 formatStr = "ITF";
                 break;
+            */
             default:
                 formatStr = "UNKNOWN";
                 break;
@@ -292,10 +296,10 @@ public class BarcodeScannerActivity extends AppCompatActivity {
             BarcodeScannerOptions options = new BarcodeScannerOptions.Builder()
                     .setBarcodeFormats(
                             Barcode.FORMAT_QR_CODE,
-                            Barcode.FORMAT_EAN_8,
-                            Barcode.FORMAT_EAN_13,
-                            Barcode.FORMAT_CODE_39,
-                            Barcode.FORMAT_ITF)
+                            //Barcode.FORMAT_EAN_8,
+                            //Barcode.FORMAT_EAN_13,
+                            Barcode.FORMAT_CODE_39/*,
+                            Barcode.FORMAT_ITF*/)
                     .build();
             scanner = BarcodeScanning.getClient(options);
         }
