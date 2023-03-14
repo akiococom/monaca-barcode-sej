@@ -1,9 +1,9 @@
 {
-  "name": "@monaca/monaca-plugin-barcode-scanner",
-  "version": "1.2.0",
-  "description": "Monaca Barcode Scanner Plugin",
+  "name": "@monaca/monaca-plugin-barcode-scanner-sej",
+  "version": "1.2.5",
+  "description": "Monaca Barcode Scanner Plugin SEJ",
   "cordova": {
-    "id": "@monaca/monaca-plugin-barcode-scanner",
+    "id": "@monaca/monaca-plugin-barcode-scanner-sej",
     "platforms": [
       "ios",
       "android"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/monaca-plugins/monaca-plugin-barcode-scanner.git"
+    "url": "git+https://github.com/akiococom/monaca-barcode-sej.git"
   },
   "keywords": [
     "monaca",
@@ -22,10 +22,10 @@
     "cordova-ios",
     "cordova-android"
   ],
-  "author": "Asial Corporation",
+  "author": "akiococom",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/monaca-plugins/monaca-plugin-barcode-scanner/issues"
+    "url": "https://github.com/akiococom/monaca-barcode-sej/issues"
   },
-  "homepage": "https://github.com/monaca-plugins/monaca-plugin-barcode-scanner#readme"
+  "homepage": "https://github.com/akiococom/monaca-barcode-sej#readme"
 }
