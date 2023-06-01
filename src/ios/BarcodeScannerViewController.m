@@ -524,12 +524,16 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
     NSString *format = @"UNKNOWN";
     if (type == AVMetadataObjectTypeQRCode) {
         format = @"QR_CODE";
-    } else if (type == AVMetadataObjectTypeEAN8Code) {
-        format = @"EAN_8";
-    } else if (type == AVMetadataObjectTypeEAN13Code) {
-        format = @"EAN_13";
-    } else if (type == AVMetadataObjectTypeITF14Code) {
-        format = @"ITF";
+    } else if (type == AVMetadataObjectTypeCodabarCode) {
+        format = @"CODABAR";
+    } else if (type == AVMetadataObjectTypeCode128Code) {
+        format = @"CODE_128";
+    //} else if (type == AVMetadataObjectTypeEAN8Code) {
+    //    format = @"EAN_8";
+    //} else if (type == AVMetadataObjectTypeEAN13Code) {
+    //    format = @"EAN_13";
+    //} else if (type == AVMetadataObjectTypeITF14Code) {
+    //    format = @"ITF";
     }
     
     return format;
