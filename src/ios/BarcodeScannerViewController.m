@@ -470,9 +470,6 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
         // バーコードを検出
         NSString *barcodeDataStr = [(AVMetadataMachineReadableCodeObject *)data stringValue];
         if ([data.type isEqualToString:AVMetadataObjectTypeCodabarCode]
-            //|| [data.type isEqualToString:AVMetadataObjectTypeEAN13Code]
-            //|| [data.type isEqualToString:AVMetadataObjectTypeEAN8Code]
-            //|| [data.type isEqualToString:AVMetadataObjectTypeITF14Code]) {
             || [data.type isEqualToString:AVMetadataObjectTypeQRCode]
             || [data.type isEqualToString:AVMetadataObjectTypeCode128Code]) {
 
