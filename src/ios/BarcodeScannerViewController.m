@@ -424,9 +424,11 @@ NSString* timeoutPrompt;
     [self.session addOutput:output];
     // 読み取りたいバーコードの種類を指定
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,
-        AVMetadataObjectTypeEAN8Code,
-        AVMetadataObjectTypeITF14Code]];
+    //[output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,
+    //    AVMetadataObjectTypeEAN8Code,
+    //    AVMetadataObjectTypeITF14Code]];
+    [output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeCode128Code,
+            AVMetadataObjectTypeCodabarCode]];
     
     // 検出エリアの設定
     // 検出エリアの座標(絶対値)を計算
@@ -469,9 +471,11 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
         // バーコードを検出
         NSString *barcodeDataStr = [(AVMetadataMachineReadableCodeObject *)data stringValue];
         if ([data.type isEqualToString:AVMetadataObjectTypeQRCode]
-            || [data.type isEqualToString:AVMetadataObjectTypeEAN13Code]
-            || [data.type isEqualToString:AVMetadataObjectTypeEAN8Code]
-            || [data.type isEqualToString:AVMetadataObjectTypeITF14Code]) {
+            //|| [data.type isEqualToString:AVMetadataObjectTypeEAN13Code]
+            //|| [data.type isEqualToString:AVMetadataObjectTypeEAN8Code]
+            //|| [data.type isEqualToString:AVMetadataObjectTypeITF14Code]) {
+            || [data.type isEqualToString:AVMetadataObjectTypeCode128Code]
+            || [data.type isEqualToString:AVMetadataObjectTypeCodabarCode]) {
 
             self.detectedText = barcodeDataStr;
             self.detectedFormat = [BarcodeScannerViewController getBarcodeFormatString:data.type];
@@ -522,12 +526,12 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 /// @param type  AVMetadataObjectTypeのバーコード形式
 + (NSString *)getBarcodeFormatString:(NSString *)type {
     NSString *format = @"UNKNOWN";
-    if (type == AVMetadataObjectTypeQRCode) {
+    if (type == AVMetadataObjectTypeCode128Code) {
+        format = @"CODE_128";
+    } else if (type == AVMetadataObjectTypeQRCode) {
         format = @"QR_CODE";
     } else if (type == AVMetadataObjectTypeCodabarCode) {
         format = @"CODABAR";
-    } else if (type == AVMetadataObjectTypeCode128Code) {
-        format = @"CODE_128";
     //} else if (type == AVMetadataObjectTypeEAN8Code) {
     //    format = @"EAN_8";
     //} else if (type == AVMetadataObjectTypeEAN13Code) {
