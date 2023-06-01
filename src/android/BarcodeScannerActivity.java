@@ -298,13 +298,13 @@ public class BarcodeScannerActivity extends AppCompatActivity {
         ScannerAnalyzer() {
             BarcodeScannerOptions options = new BarcodeScannerOptions.Builder()
                     .setBarcodeFormats(
-                            Barcode.FORMAT_QR_CODE,
+                            //Barcode.FORMAT_QR_CODE,
                             //Barcode.FORMAT_EAN_8,
                             //Barcode.FORMAT_EAN_13,
                             Barcode.FORMAT_CODE_128,
                             Barcode.FORMAT_CODABAR/*,
-							/*,
-                            Barcode.FORMAT_ITF*/)
+                            //Barcode.FORMAT_ITF
+					)
                     .build();
             scanner = BarcodeScanning.getClient(options);
         }

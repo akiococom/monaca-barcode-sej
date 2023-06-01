@@ -427,7 +427,7 @@ NSString* timeoutPrompt;
     //[output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,
     //    AVMetadataObjectTypeEAN8Code,
     //    AVMetadataObjectTypeITF14Code]];
-    [output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeCode128Code,
+    [output setMetadataObjectTypes:@[AVMetadataObjectTypeCode128Code, //AVMetadataObjectTypeQRCode,
             AVMetadataObjectTypeCodabarCode]];
     
     // 検出エリアの設定
@@ -470,11 +470,11 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 
         // バーコードを検出
         NSString *barcodeDataStr = [(AVMetadataMachineReadableCodeObject *)data stringValue];
-        if ([data.type isEqualToString:AVMetadataObjectTypeQRCode]
+        if ([data.type isEqualToString:AVMetadataObjectTypeCode128Code]
             //|| [data.type isEqualToString:AVMetadataObjectTypeEAN13Code]
             //|| [data.type isEqualToString:AVMetadataObjectTypeEAN8Code]
             //|| [data.type isEqualToString:AVMetadataObjectTypeITF14Code]) {
-            || [data.type isEqualToString:AVMetadataObjectTypeCode128Code]
+            //|| [data.type isEqualToString:AVMetadataObjectTypeQRCode]
             || [data.type isEqualToString:AVMetadataObjectTypeCodabarCode]) {
 
             self.detectedText = barcodeDataStr;
