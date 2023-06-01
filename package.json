@@ -1,9 +1,9 @@
 {
-  "name": "@monaca/monaca-plugin-barcode-scanner-sej",
+  "name": "@monaca/monaca-barcode-sej",
   "version": "1.2.5",
   "description": "Monaca Barcode Scanner Plugin SEJ",
   "cordova": {
-    "id": "@monaca/monaca-plugin-barcode-scanner-sej",
+    "id": "@monaca/monaca-barcode-sej",
     "platforms": [
       "ios",
       "android"
