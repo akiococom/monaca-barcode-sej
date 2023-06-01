@@ -172,25 +172,12 @@ public class BarcodeScannerActivity extends AppCompatActivity {
             case Barcode.FORMAT_QR_CODE:
                 formatStr = "QR_CODE";
                 break;
-            /*
-            case Barcode.FORMAT_EAN_8:
-                formatStr = "EAN_8";
-                break;
-            case Barcode.FORMAT_EAN_13:
-                formatStr = "EAN_13";
-                break;
-            */
             case Barcode.FORMAT_CODE_128:
                 formatStr = "CODE_128";
                 break;
-            case Barcode.FORMAT_CODABAR:
-                formatStr = "CODABAR";
-                break;
-            /*
-            case Barcode.FORMAT_ITF:
-                formatStr = "ITF";
-                break;
-            */
+            //case Barcode.FORMAT_CODABAR:
+            //    formatStr = "CODABAR";
+            //    break;
             default:
                 formatStr = "UNKNOWN";
                 break;
@@ -298,11 +285,11 @@ public class BarcodeScannerActivity extends AppCompatActivity {
         ScannerAnalyzer() {
             BarcodeScannerOptions options = new BarcodeScannerOptions.Builder()
                     .setBarcodeFormats(
-                            //Barcode.FORMAT_QR_CODE,
+                            Barcode.FORMAT_QR_CODE,
                             //Barcode.FORMAT_EAN_8,
                             //Barcode.FORMAT_EAN_13,
-                            Barcode.FORMAT_CODE_128,
-                            Barcode.FORMAT_CODABAR/*,
+                            Barcode.FORMAT_CODE_128//,
+                            //Barcode.FORMAT_CODABAR/*,
                             //Barcode.FORMAT_ITF
 					)
                     .build();
