@@ -290,7 +290,8 @@ public class BarcodeScannerActivity extends AppCompatActivity {
                     .setBarcodeFormats(
                             Barcode.FORMAT_QR_CODE,
                             Barcode.FORMAT_CODE_128,
-                            Barcode.FORMAT_CODABAR
+                            Barcode.FORMAT_CODABAR,
+							Barcode.FORMAT_EAN_13
 					)
                     .build();
             scanner = BarcodeScanning.getClient(options);
