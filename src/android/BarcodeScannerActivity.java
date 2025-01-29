@@ -178,7 +178,7 @@ public class BarcodeScannerActivity extends AppCompatActivity {
             case Barcode.FORMAT_CODABAR:
                 formatStr = "CODABAR";
                 break;
-			case Barcode.FORMAT_EAN_13
+			case Barcode.FORMAT_EAN_13:
 				formatStr = "EAN_13";
                 break;
             default:
